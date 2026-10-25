@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iverson Candilada — Designer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEFE9; --surface:#E2E6DE; --ink:#16201B; --muted:#586259; --line:#C5CCC1; --accent:#3447F5; --on-accent:#fff;
+  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif; --body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101512;--surface:#18201B;--ink:#E8ECE5;--muted:#9AA69C;--line:#2A352E;--accent:#8C98FF;--on-accent:#101512}}
+:root[data-theme="dark"]{--bg:#101512;--surface:#18201B;--ink:#E8ECE5;--muted:#9AA69C;--line:#2A352E;--accent:#8C98FF;--on-accent:#101512}
+html{scroll-padding-top:5rem;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.logo{font:800 1.15rem var(--display);text-decoration:none;letter-spacing:-.02em}
+nav ul{display:flex;gap:clamp(1rem,3vw,2rem);list-style:none;margin:0;padding:0;font-size:.95rem;font-weight:500}
+nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav ul a:hover{color:var(--ink)}
+@media(max-width:560px){nav ul li:nth-child(n+3):not(:last-child){display:none}}
+
+/* hero */
+:root{--hero:#2B3BFF;--lime:#D2FF3A;--coral:#FF6B4A}
+.heroband{position:relative;overflow:hidden;background:var(--hero);color:#fff}
+.hero{position:relative;z-index:1;padding:clamp(3.5rem,10vw,8rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero h1{font:800 clamp(3.4rem,13.5vw,10.5rem)/.88 var(--display);letter-spacing:-.045em;margin:0;font-variation-settings:'opsz' 96}
+.hero h1 span{display:block}
+.hero h1 span:last-child{color:var(--lime);margin-left:clamp(0rem,8vw,6rem)}
+.hero-row{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;margin-top:clamp(2rem,5vw,4rem);align-items:end}
+.hero p{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.5;max-width:30ch;margin:0}
+.status{display:flex;align-items:center;gap:.7rem;justify-self:end;font-weight:600;color:#16201B;background:var(--lime);padding:.6rem 1.1rem;border-radius:999px}
+.dot{width:.65rem;height:.65rem;border-radius:50%;background:#2DBE6C;box-shadow:0 0 0 0 #2DBE6C88;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 .7rem #2DBE6C00}100%{box-shadow:0 0 0 0 #2DBE6C00}}
+@media(max-width:700px){.hero-row{grid-template-columns:1fr}.status{justify-self:start}}
+
+section{padding:clamp(3.5rem,8vw,6.5rem) 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(2rem,5vw,3.25rem)/1.05 var(--display);letter-spacing:-.03em;margin:0 0 2.5rem}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:2rem 4rem}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+
+/* work */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1rem;padding:1.5rem 0;transition:padding .25s}
+summary::-webkit-details-marker{display:none}
+summary h3{font:600 clamp(1.5rem,3.6vw,2.4rem)/1.1 var(--display);letter-spacing:-.025em;margin:0;transition:color .2s,transform .25s}
+summary:hover h3{color:var(--accent);transform:translateX(.5rem)}
+summary small{color:var(--muted);font-size:.95rem}
+details[open] summary h3{color:var(--accent)}
+.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;padding:0 0 2.25rem}
+.proj p{margin:0 0 1rem;max-width:46ch;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.tags li{font-size:.85rem;font-weight:500;padding:.25rem .8rem;border:1px solid var(--line);border-radius:999px}
+.art{aspect-ratio:16/10;border-radius:14px;position:relative;overflow:hidden}
+.art i{position:absolute;display:block}
+.a1{background:#16201B}.a1 i:nth-child(1){inset:14% 56% 14% 8%;background:var(--accent);border-radius:8px}.a1 i:nth-child(2){inset:14% 8% 52% 48%;background:#EDEFE9;border-radius:8px}.a1 i:nth-child(3){inset:52% 8% 14% 48%;background:#2DBE6C;border-radius:8px}
+.a2{background:#F2C14E}.a2 i:nth-child(1){width:46%;aspect-ratio:1;left:10%;top:18%;border-radius:50%;background:#16201B}.a2 i:nth-child(2){width:30%;aspect-ratio:1;right:12%;bottom:14%;border-radius:50%;background:#3447F5}.a2 i:nth-child(3){width:14%;aspect-ratio:1;right:34%;top:16%;background:#EDEFE9;border-radius:4px;transform:rotate(20deg)}
+.a3{background:#3447F5}.a3 i{left:10%;right:10%;height:11%;background:#EDEFE9;border-radius:999px}.a3 i:nth-child(1){top:20%;right:34%}.a3 i:nth-child(2){top:44%;right:10%;opacity:.7}.a3 i:nth-child(3){top:68%;right:52%;opacity:.45}
+.a4{background:#D9DED3}.a4 i:nth-child(1){left:8%;right:8%;top:16%;height:68%;border:3px solid #16201B;border-radius:12px}.a4 i:nth-child(2){left:14%;width:34%;top:26%;height:16%;background:#16201B;border-radius:6px}.a4 i:nth-child(3){left:14%;right:14%;top:52%;height:22%;background:#3447F5;border-radius:6px}
+@media(max-width:760px){.proj{grid-template-columns:1fr}summary small{display:none}}
+
+/* about */
+.lead{font:600 clamp(1.4rem,2.8vw,2rem)/1.3 var(--display);letter-spacing:-.02em;margin:0 0 1.5rem}
+.about p{color:var(--muted);max-width:60ch;margin:0 0 1.25rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2.5rem}
+.skills div{background:var(--surface);border-radius:14px;padding:1.4rem}
+.skills h4{font:600 1.1rem var(--display);margin:0 0 .5rem}
+.skills p{margin:0;font-size:.97rem}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 2.2rem 2rem}
+.tl li::before{content:"";position:absolute;left:-.45rem;top:.55rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl time{font-weight:600;color:var(--accent);font-size:.95rem}
+.tl h3{font:600 1.35rem var(--display);margin:.1rem 0 .3rem;letter-spacing:-.015em}
+.tl p{margin:0;color:var(--muted);max-width:52ch}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-top:0;border-radius:28px 28px 0 0;margin-top:2rem}
+.contact h2{font-size:clamp(2.4rem,8vw,6rem);line-height:.95;margin-bottom:2rem}
+.mail{display:inline-block;font:600 clamp(1.2rem,3.4vw,2rem) var(--display);padding:.9rem 1.8rem;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;transition:transform .2s}
+.mail:hover{transform:translateY(-3px)}
+.links{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid color-mix(in srgb,var(--bg) 25%,transparent)}
+.links a{opacity:.8;text-decoration:none;font-weight:500}
+.links a:hover{opacity:1;text-decoration:underline}
+footer{background:var(--ink);color:var(--bg);opacity:1;padding:0 0 calc(2rem + env(safe-area-inset-bottom,0px))}
+footer p{margin:0;font-size:.9rem;opacity:.6}
+
+.shape{position:absolute;display:block}
+.s-circle{width:min(46vw,520px);aspect-ratio:1;border-radius:50%;background:var(--lime);right:-12%;bottom:-38%;opacity:.95}
+.s-half{width:min(24vw,240px);height:min(12vw,120px);border-radius:240px 240px 0 0;background:var(--coral);left:-3%;top:0;transform:rotate(180deg) translateY(1px)}
+.badge{position:absolute;z-index:2;width:clamp(96px,14vw,168px);right:clamp(1rem,6vw,5rem);top:clamp(1.5rem,5vw,3.5rem);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.marquee{background:var(--lime);color:#16201B;overflow:hidden;white-space:nowrap;border-block:2px solid #16201B}
+.track{display:inline-flex;gap:2rem;padding:1rem 0;font:800 clamp(1.3rem,3vw,2rem) var(--display);letter-spacing:-.02em;animation:slide 26s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.hero h1{text-shadow:0 .04em 0 rgba(0,0,0,.12)}
+h2{font-size:clamp(2.4rem,7vw,4.75rem)}
+summary{padding:1.6rem 1rem;margin:0 -1rem;border-radius:16px;transition:background .25s}
+summary:hover{background:var(--surface)}
+summary:hover h3{transform:translateX(.75rem)}
+details[open] summary h3{color:var(--accent)}
+.art{box-shadow:0 24px 50px -20px rgba(22,32,27,.45);transform:rotate(-2deg);transition:transform .35s}
+.art:hover{transform:rotate(0) scale(1.02)}
+.skills div:nth-child(1){background:var(--lime);color:#16201B}.skills div:nth-child(1) p{color:#16201B}
+.skills div:nth-child(2){background:var(--hero);color:#fff}.skills div:nth-child(2) p{color:#E6E9FF}
+.skills div:nth-child(3){background:var(--coral);color:#16201B}.skills div:nth-child(3) p{color:#16201B}
+.skills div{transition:transform .25s}.skills div:hover{transform:translateY(-6px) rotate(-1deg)}
+.mail{background:var(--lime);color:#16201B}
+.contact h2{color:var(--lime)}
+::selection{background:var(--lime);color:#16201B}
+@media(max-width:700px){.badge{top:auto;bottom:1.25rem;right:1rem}}
+/* single load moment */
+.hero h1 span{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:last-child{animation-delay:.12s}
+@keyframes rise{from{opacity:0;transform:translateY(1.2rem)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav aria-label="Main">
+    <a class="logo" href="#top">Iverson C.</a>
+    <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#path">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav></div>
+</header>
+
+<main id="top">
+  <div class="heroband">
+  <i class="shape s-circle" aria-hidden="true"></i><i class="shape s-half" aria-hidden="true"></i>
+  <svg class="badge" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="98" fill="#FF6B4A"/><text font-size="17" font-weight="700" letter-spacing="3" fill="#16201B" font-family="Arial,sans-serif"><textPath href="#c">DESIGN • BUILD • LAUNCH • DESIGN • BUILD • LAUNCH •</textPath></text><path d="M100 70 L108 92 L130 100 L108 108 L100 130 L92 108 L70 100 L92 92 Z" fill="#16201B"/></svg>
+  <div class="wrap hero">
+    <h1><span>Iverson</span><span>Candilada</span></h1>
+    <div class="hero-row">
+      <p>I design and build clear, fast websites and apps for people who care how their work is presented.</p>
+      <div class="status"><span class="dot"></span>Available for projects</div>
+    </div>
+  </div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="track"><span>Interface design</span><span>✦</span><span>Front-end development</span><span>✦</span><span>Branding</span><span>✦</span><span>Accessibility</span><span>✦</span><span>Interface design</span><span>✦</span><span>Front-end development</span><span>✦</span><span>Branding</span><span>✦</span><span>Accessibility</span><span>✦</span></div></div>
+
+  <section id="work"><div class="wrap">
+    <h2>Selected work</h2>
+    <details open><summary><h3>Harvest Table</h3><small>Web app, 2025</small></summary>
+      <div class="proj"><div><p>An ordering platform for local farms and the restaurants that buy from them. Farmers post what’s ripe, chefs reserve it in two taps.</p><ul class="tags"><li>Product design</li><li>React</li><li>Node.js</li></ul></div><div class="art a1" aria-hidden="true"><i></i><i></i><i></i></div></div></details>
+    <details><summary><h3>Kalayo Coffee</h3><small>Brand and site, 2024</small></summary>
+      <div class="proj"><div><p>A visual identity and online shop for a small-batch roaster, built around bold shapes and a checkout that takes under a minute.</p><ul class="tags"><li>Branding</li><li>Shopify</li><li>Illustration</li></ul></div><div class="art a2" aria-hidden="true"><i></i><i></i><i></i></div></div></details>
+    <details><summary><h3>Daloy Reader</h3><small>Mobile app, 2024</small></summary>
+      <div class="proj"><div><p>A reading app that adjusts type size, spacing and contrast to each reader, so long articles stay comfortable on any screen.</p><ul class="tags"><li>UX research</li><li>Accessibility</li><li>React Native</li></ul></div><div class="art a3" aria-hidden="true"><i></i><i></i><i></i></div></div></details>
+    <details><summary><h3>Bahay Ledger</h3><small>Dashboard, 2023</small></summary>
+      <div class="proj"><div><p>A bookkeeping dashboard for small shops. Sales, expenses and stock sit on one screen, with plain-language summaries instead of jargon.</p><ul class="tags"><li>Dashboard UI</li><li>TypeScript</li><li>Data visualization</li></ul></div><div class="art a4" aria-hidden="true"><i></i><i></i><i></i></div></div></details>
+  </div></section>
+
+  <section id="about"><div class="wrap about">
+    <h2>About</h2>
+    <div class="split">
+      <div></div>
+      <div>
+        <p class="lead">I care about the small details that make a site feel calm and easy to use.</p>
+        <p>I’m Iverson, a designer and front-end developer from the Philippines. I take projects from first sketch to launch, so the design you approve is the one that ships.</p>
+        <p>My process is simple: understand the people using the product, make the layout and typography do the heavy lifting, then build it to load fast and work everywhere.</p>
+      </div>
+    </div>
+    <div class="skills">
+      <div><h4>Design</h4><p>Interface design, branding, prototyping, design systems</p></div>
+      <div><h4>Development</h4><p>HTML, CSS, JavaScript, TypeScript, React</p></div>
+      <div><h4>Craft</h4><p>Accessibility, performance, responsive layouts, motion</p></div>
+    </div>
+  </div></section>
+
+  <section id="path"><div class="wrap">
+    <h2>Experience</h2>
+    <ol class="tl">
+      <li><time>2024 – Present</time><h3>Freelance Designer &amp; Developer</h3><p>Websites, brands and apps for startups and small businesses across several countries.</p></li>
+      <li><time>2022 – 2024</time><h3>Front-End Developer</h3><p>Built and maintained product interfaces and a shared component library for a growing web team.</p></li>
+      <li><time>2020 – 2022</time><h3>UI Designer</h3><p>Designed marketing pages and mobile screens, and worked directly with developers to ship them.</p></li>
+    </ol>
+  </div></section>
+
+  <section id="contact" class="contact"><div class="wrap">
+    <h2>Let’s build something good.</h2>
+    <a class="mail" href="mailto:hello@iversoncandilada.com">hello@iversoncandilada.com</a>
+    <div class="links"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Dribbble</a><a href="#">Download résumé</a></div>
+  </div></section>
+</main>
+<footer><div class="wrap"><p>© 2026 Iverson Candilada. All rights reserved.</p></div></footer>
+</body>
+</html>
